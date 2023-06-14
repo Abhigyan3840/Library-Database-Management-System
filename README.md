@@ -32,13 +32,9 @@ Please note that the description can be customized further based on additional f
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/library-db-management.git
+   git clone https://github.com/Abhigyan3840/Library-Database-Management-System.git
 
 
-Certainly! Here's a README file based on the code you provided:
-
-markdown
-Copy code
 # Library Database Management System
 
 A GUI application built with Python and Tkinter for managing a library database. The application allows you to add, view, update, and delete book records, and provides functionality for tracking book status and issuing cards.
