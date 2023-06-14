@@ -1,11 +1,9 @@
-# Importing all necessary modules
 import sqlite3
 from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as mb
 import tkinter.simpledialog as sd
 
-# Connecting to Database
 connector = sqlite3.connect('library.db')
 cursor = connector.cursor()
 
@@ -13,7 +11,6 @@ connector.execute(
     'CREATE TABLE IF NOT EXISTS Library (BK_NAME TEXT, BK_ID TEXT PRIMARY KEY NOT NULL, AUTHOR_NAME TEXT, BK_STATUS TEXT, CARD_ID TEXT)'
 )
 
-# Functions
 def issuer_card():
     Cid = sd.askstring('Issuer Card ID', 'What is the Issuer\'s Card ID?\t\t\t')
     if not Cid:
@@ -149,12 +146,11 @@ def delete_record():
             mb.showerror('An error occurred', 'An error occurred while deleting the record. Please try again later.')
 
 
-# Main Program
+
 root = Tk()
 root.title('Library Database Management System')
-root.configure(bg='#6600CC')  # Set the background color
+root.configure(bg='#6600CC') 
 
-# Creating the Treeview and Scrollbar
 tree_frame = Frame(root)
 tree_frame.pack(pady=20)
 tree_scroll = Scrollbar(tree_frame)
@@ -213,7 +209,6 @@ card_id = StringVar()
 card_id_entry = Entry(book_details_frame, textvariable=card_id, state='readonly')
 card_id_entry.grid(row=4, column=1, padx=10, pady=10)
 
-# Buttons
 button_frame = Frame(root, bg='#6600CC')
 button_frame.pack(pady=20)
 
@@ -235,14 +230,11 @@ view_button.grid(row=0, column=4, padx=10)
 wipe_button = Button(button_frame, text='Wipe Database', command=wipe_database, bg='#993399', fg='white')
 wipe_button.grid(row=0, column=5, padx=10)
 
-# Configure treeview style
 style = ttk.Style()
 style.configure('Custom.Treeview', background='#993399', foreground='white', fieldbackground='#993399')
 
-# Displaying Records
 display_records()
 
 root.mainloop()
 
-# Closing the database connection
 connector.close()
