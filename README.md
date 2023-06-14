@@ -69,7 +69,7 @@ A GUI application built with Python and Tkinter for managing a library database.
 
 1. Clone the repository:
 
-   git clone https://github.com/your-username/library-db-management.git
+   git clone [https://github.com/your-username/library-db-management.git](https://github.com/Abhigyan3840/Library-Database-Management-System.git)
 
 2.Navigate to the project directory:
 
